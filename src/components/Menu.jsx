@@ -10,14 +10,14 @@ const items1 = ["1", "2", "3"].map((key) => ({
 const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, index) => {
   const key = String(index + 1);
   return {
-    key: `sub${key}`,
+    key: `منو${key}`,
     // icon: React.createElement(icon),
-    label: `subnav ${key}`,
+    label: `منو ${key}`,
     children: new Array(4).fill(null).map((_, j) => {
       const subKey = index * 4 + j + 1;
       return {
         key: subKey,
-        label: `option${subKey}`,
+        label: `منو لیست${subKey}`,
       };
     }),
   };
@@ -39,9 +39,9 @@ const MenuOne = () => (
           margin: "16px 0",
         }}
       >
-        <Breadcrumb.Item>Home</Breadcrumb.Item>
-        <Breadcrumb.Item>List</Breadcrumb.Item>
-        <Breadcrumb.Item>App</Breadcrumb.Item>
+        <Breadcrumb.Item>صفحه اصلی</Breadcrumb.Item>
+        <Breadcrumb.Item>محصولات</Breadcrumb.Item>
+        <Breadcrumb.Item>کالا</Breadcrumb.Item>
       </Breadcrumb>
       <Layout
         className="site-layout-background"
@@ -55,7 +55,7 @@ const MenuOne = () => (
             height: "100%",
           }}
         >
-          Content
+          کالای مورد نظر
         </Content>
         <Sider className="site-layout-background" width={200}>
           <Menu
