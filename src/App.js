@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<MenuOne/>} />
+        <Route path='/' element={<Home/>} />
         <Route path='/Products' element={<Products/>} />
         <Route path='/Login' element={<Login/>} />
         <Route path='/Product/:id' element={<SingleProduct />} />
