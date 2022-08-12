@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import 'antd/dist/antd.css'
 import App from './App';
+import 'assets/fonts/Samim.ttf'
+import { ChakraProvider } from '@chakra-ui/react'
+// pages/_app.js
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
+    <ChakraProvider>
+        <App />
+    </ChakraProvider>
 );

@@ -1,9 +1,13 @@
-import React from 'react'
+import AdminHeader from "layouts/AdminHeader";
+import React from "react";
 
 function Admin() {
   return (
-    <div>Admin</div>
-  )
+    <>
+      <AdminHeader />
+      <h1>Admin</h1>
+    </>
+  );
 }
 
-export default Admin
+export default Admin;

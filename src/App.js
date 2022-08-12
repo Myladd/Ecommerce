@@ -1,21 +1,26 @@
-import MenuOne from './components/Menu';
+import Admin from "pages/Admin";
+import Existence from "pages/Existence";
+import Home from "pages/Home";
+import Login from "pages/Login";
+import Orders from "pages/Orders";
+import Payment from "pages/Payment";
+import Products from "pages/Products";
+import SingleProduct from "pages/SingleProduct";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Admin from './pages/Admin';
-import Products from "./pages/Products";
-import SingleProduct from './pages/SingleProduct';
 
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/Products' element={<Products/>} />
-        <Route path='/Login' element={<Login/>} />
-        <Route path='/Product/:id' element={<SingleProduct />} />
-        <Route path='/Admin' element={<Admin />} />
+        <Route path="/Products" element={<Products />} />
+        <Route path="/Existence" element={<Existence />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Orders" element={<Orders />} />
+        <Route path="/Admin" element={<Admin />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/Payment" element={<Payment />} />
+        <Route path="/Product/:id" element={<SingleProduct />} />
       </Routes>
     </Router>
   );

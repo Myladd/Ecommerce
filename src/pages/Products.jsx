@@ -1,9 +1,23 @@
-import React from 'react'
+import { Flex, Spacer, Text } from "@chakra-ui/react";
+import AddBtnAdmin from "components/Btn/AddBtnAdmin";
+import ProductAdminTable from "components/Table/ProductAdminTable";
+import AdminHeader from "layouts/AdminHeader";
+import React from "react";
 
 function Products() {
   return (
-    <div>Products</div>
-  )
+    <>
+      <AdminHeader />
+      <Flex alignItems='center' m={10}>
+        <Text fontSize="4xl" mr={10}>
+          مدیریت کالا ها
+        </Text>
+        <Spacer/>
+        <AddBtnAdmin />
+      </Flex>
+      <ProductAdminTable />
+    </>
+  );
 }
 
-export default Products
+export default Products;
