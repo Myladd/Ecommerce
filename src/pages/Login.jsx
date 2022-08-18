@@ -13,8 +13,8 @@ function Login() {
   }
 
   return (
-    <Flex justify="center">
-      <Formik
+    <Flex justify="center" mt={200} p={10}>
+      <Formik  w="500px" bgColor="green.100"
         initialValues={{ name: "" }}
         onSubmit={(values, actions) => {
           setTimeout(() => {

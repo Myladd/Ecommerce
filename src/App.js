@@ -7,6 +7,7 @@ import Payment from "pages/Payment";
 import Products from "pages/Products";
 import SingleProduct from "pages/SingleProduct";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {

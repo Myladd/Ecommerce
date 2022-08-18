@@ -1,9 +1,7 @@
-import { Button, Flex, Image, Spinner, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import { Flex, Spinner, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import React from 'react'
-import melon from "assets/images/melon.png"
 
-
-function CountAndPrice({posts, loading}) {
+function OrdersList({posts, loading}) {
   if (loading) {
     return <Spinner
       style={{
@@ -26,21 +24,19 @@ function CountAndPrice({posts, loading}) {
         <Table w="800px" variant="striped" colorScheme="teal">
           <Thead>
             <Tr>
-              <Th>تصویر کالا</Th>
-              <Th>نام کالا</Th>
-              <Th>تعداد</Th>
-              <Th>قیمت</Th>
-              <Th>عملیات</Th>
+              <Th>شناسه</Th>
+              <Th>نام</Th>
+              <Th>زمان پبت شده</Th>
+              <Th>وضعیت</Th>
             </Tr>
           </Thead>
           <Tbody>
               {posts.map((post) => (
                 <Tr key={post.id}>
-                  <Td><Image borderRadius="full" boxSize="40px" src={melon} alt="melon" /></Td>
+                  <Td>{post.id}</Td>
                   <Td>{post.name}</Td>
-                  <Td>{post.count}</Td>
-                  <Td>{post.price}</Td>
-                  <Td><Button mr={4}> ویرایش</Button><Button> حذف</Button></Td>
+                  <Td>{post.time}</Td>
+                  <Td>{post.status}</Td>
                 </Tr>
               ))}
           </Tbody>
@@ -51,4 +47,4 @@ function CountAndPrice({posts, loading}) {
   )
 }
 
-export default CountAndPrice
+export default OrdersList
