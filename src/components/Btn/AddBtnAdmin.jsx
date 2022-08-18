@@ -13,7 +13,7 @@ function AddBtnAdmin() {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader dir="ltr">Modal Title</ModalHeader>
+          <ModalHeader dir="ltr">افزودن کالا</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Form.Group controlId="formFile" className="mb-3">
