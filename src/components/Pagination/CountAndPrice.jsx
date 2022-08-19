@@ -1,7 +1,6 @@
-import { Button, Flex, Image, Spinner, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import { Flex, Image, Spinner, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import React from 'react'
 import melon from "assets/images/melon.png"
-
 
 function CountAndPrice({posts, loading}) {
   if (loading) {
@@ -16,9 +15,10 @@ function CountAndPrice({posts, loading}) {
     emptyColor='gray.200'
     color='blue.500'
     size='xl'
-  />;
-
+    />;
+    
   }
+
   return (
     <>
     <Flex justify="center" w>
@@ -30,7 +30,6 @@ function CountAndPrice({posts, loading}) {
               <Th>نام کالا</Th>
               <Th>تعداد</Th>
               <Th>قیمت</Th>
-              <Th>عملیات</Th>
             </Tr>
           </Thead>
           <Tbody>
@@ -40,7 +39,6 @@ function CountAndPrice({posts, loading}) {
                   <Td>{post.name}</Td>
                   <Td>{post.count}</Td>
                   <Td>{post.price}</Td>
-                  <Td><Button mr={4}> ویرایش</Button><Button> حذف</Button></Td>
                 </Tr>
               ))}
           </Tbody>

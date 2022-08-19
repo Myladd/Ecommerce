@@ -3,7 +3,6 @@ import Carousel from "react-bootstrap/Carousel";
 import gro1 from "assets/images/grocery111.jpg";
 import gro2 from "assets/images/grocery2.jpg";
 import gro3 from "assets/images/grocery33.jpg";
-import { Center } from "@chakra-ui/react";
 
 function Carousel1() {
   return (

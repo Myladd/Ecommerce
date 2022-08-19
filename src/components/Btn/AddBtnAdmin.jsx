@@ -1,9 +1,14 @@
 import { Button, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Text, useDisclosure } from "@chakra-ui/react";
+import { Editor, EditorState } from "draft-js";
+import 'draft-js/dist/Draft.css';
 import React from "react";
 import { Form } from "react-bootstrap";
 
 function AddBtnAdmin() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [editorState, setEditorState] = React.useState(
+    () => EditorState.createEmpty(),
+  );
 
   return (
     <>
@@ -28,12 +33,13 @@ function AddBtnAdmin() {
               <option value="option2">سبزی</option>
               <option value="option3">حبوبات</option>
             </Select>
+            <Editor editorState={editorState} onChange={setEditorState} />
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
-              Close
+            <Button colorScheme="blue" ml={5} onClick={onClose}>
+              بستن
             </Button>
-            <Button variant="ghost">Secondary Action</Button>
+            <Button variant="ghost">افزودن</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
