@@ -81,7 +81,7 @@ const Posts = ({ posts, loading }) => {
         <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader dir="ltr">ویرایش اطلاعات محصول</ModalHeader>
+          <ModalHeader dir="ltr">ویرایش اطلاعات محصول مورد نظر</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Form.Group controlId="formFile" className="mb-3">
