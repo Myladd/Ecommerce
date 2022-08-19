@@ -20,9 +20,6 @@ function CountAndPrice({ posts, loading }) {
     );
   }
 
-  const handleEdit = () => {
-    return <Input placeholder="Basic usage" />;
-  };
 
   return (
     <>
