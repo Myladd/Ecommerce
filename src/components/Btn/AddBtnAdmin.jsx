@@ -2,7 +2,7 @@ import { Button, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalF
 import axios from "axios";
 import { Editor, EditorState } from "draft-js";
 import 'draft-js/dist/Draft.css';
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { Form } from "react-bootstrap";
 
 function AddBtnAdmin() {
@@ -12,13 +12,13 @@ function AddBtnAdmin() {
   );
 
   
-  const [contacts, setContacts] = useState();
-  const [addFormData, setAddFormData] = useState({
-    name: "",
-    address: "",
-    price: "",
-    count: "",
-  });
+  // const [contacts, setContacts] = useState();
+  // const [addFormData, setAddFormData] = useState({
+  //   name: "",
+  //   address: "",
+  //   price: "",
+  //   count: "",
+  // });
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -31,31 +31,31 @@ function AddBtnAdmin() {
     fetchPosts();
   }, []);
 
-  const handleAddFormChange = (event) => {
-    event.preventDefault();
+  // const handleAddFormChange = (event) => {
+  //   event.preventDefault();
 
-    const fieldName = event.target.getAttribute("name");
-    const fieldValue = event.target.value;
+  //   const fieldName = event.target.getAttribute("name");
+  //   const fieldValue = event.target.value;
 
-    const newFormData = { ...addFormData };
-    newFormData[fieldName] = fieldValue;
+  //   const newFormData = { ...addFormData };
+  //   newFormData[fieldName] = fieldValue;
 
-    setAddFormData(newFormData);
-  };
+  //   setAddFormData(newFormData);
+  // };
 
-  const handleAddFormSubmit = (event) => {
-    event.preventDefault();
+  // const handleAddFormSubmit = (event) => {
+  //   event.preventDefault();
 
-    const newContact = {
-      fullName: addFormData.fullName,
-      address: addFormData.address,
-      phoneNumber: addFormData.phoneNumber,
-      email: addFormData.email,
-    };
+  //   const newContact = {
+  //     fullName: addFormData.fullName,
+  //     address: addFormData.address,
+  //     phoneNumber: addFormData.phoneNumber,
+  //     email: addFormData.email,
+  //   };
 
-    const newContacts = [...contacts, newContact];
-    setContacts(newContacts);
-  };
+  //   const newContacts = [...contacts, newContact];
+  //   setContacts(newContacts);
+  // };
 
   return (
     <>

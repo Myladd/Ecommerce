@@ -1,11 +1,8 @@
 import { Button, Flex, Image, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Spinner, Table, TableContainer, Tbody, Td, Text, Th, Thead, Tr, useDisclosure } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
-import melon from "assets/images/melon.png"
+import React from "react";
 import Swal from "sweetalert2";
 import { Form } from "react-bootstrap";
 import { Editor, EditorState } from "draft-js";
-import axios from "axios";
-
 
 const Posts = ({posts ,loading }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -28,33 +25,6 @@ const Posts = ({posts ,loading }) => {
   />;
   }
 
-  // useEffect(() => {
-  //   const fetchPosts = async () => {
-  //     // setLoading(true);
-  //     const res = await axios.get('http://localhost:3001/products');
-  //     setPosts(res.data);
-  //     // setLoading(false);
-  //     console.log(res.data);
-  //   };
-  //   fetchPosts();
-  // }, []);
-  
-  // useEffect(() => {
-  //   const getProducts = async () => {
-  //     setLoading(true);
-  //     const response = await fetch("https://fakestoreapi.com/products");
-  //     if (componentMounted) {
-  //       setData(await response.clone().json());
-  //       setFilter(await response.json());
-  //       setLoading(false);
-  //     }
-
-  //     return () => {
-  //       componentMounted = false;
-  //     };
-  //   };
-  //   getProducts();
-  // }, []);
 
   const handleRemove = (id) => {
 
