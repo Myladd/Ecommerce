@@ -1,12 +1,13 @@
 import { Button, Flex, Image, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Spinner, Table, TableContainer, Tbody, Td, Text, Th, Thead, Tr, useDisclosure } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import melon from "assets/images/melon.png"
 import Swal from "sweetalert2";
 import { Form } from "react-bootstrap";
 import { Editor, EditorState } from "draft-js";
+import axios from "axios";
 
 
-const Posts = ({ posts, loading }) => {
+const Posts = ({posts ,loading }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [editorState, setEditorState] = React.useState(
     () => EditorState.createEmpty(),
@@ -27,7 +28,36 @@ const Posts = ({ posts, loading }) => {
   />;
   }
 
-  const handleRemove = () => {
+  // useEffect(() => {
+  //   const fetchPosts = async () => {
+  //     // setLoading(true);
+  //     const res = await axios.get('http://localhost:3001/products');
+  //     setPosts(res.data);
+  //     // setLoading(false);
+  //     console.log(res.data);
+  //   };
+  //   fetchPosts();
+  // }, []);
+  
+  // useEffect(() => {
+  //   const getProducts = async () => {
+  //     setLoading(true);
+  //     const response = await fetch("https://fakestoreapi.com/products");
+  //     if (componentMounted) {
+  //       setData(await response.clone().json());
+  //       setFilter(await response.json());
+  //       setLoading(false);
+  //     }
+
+  //     return () => {
+  //       componentMounted = false;
+  //     };
+  //   };
+  //   getProducts();
+  // }, []);
+
+  const handleRemove = (id) => {
+
     Swal.fire({
       title: 'آیا میخواهید حذف شود؟',
       text: "در صورت تایید کالا موردنظر حذف میشود.",
@@ -38,12 +68,19 @@ const Posts = ({ posts, loading }) => {
       confirmButtonText: 'بله حذف شود'
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire(
-          'حذف شد',
-          'کالای موردنظر حذف گردید',
-          'انجام شد'
-        )
-      }
+        fetch(`https://fakestoreapi.com/products/${id}`, {
+          method:'DELETE'
+        }).then((res) => {
+          if (res.status === 200) {
+            console.log(res.json());
+            Swal.fire(
+              'حذف شد',
+              'کالای موردنظر حذف گردید',
+              'انجام شد'
+            )      
+          }
+        }).then((res)=> {console.log(res);})
+        }
     })
   }
 
@@ -67,12 +104,12 @@ const Posts = ({ posts, loading }) => {
             <Tbody>
                 {posts.map((post) => (
                   <Tr key={post.id}>
-                    <Td><Image borderRadius="full" boxSize="40px" src={melon} alt="melon" /></Td>
-                    <Td>{post.name}</Td>
+                    <Td><Image borderRadius="full" boxSize="40px" src={post.image} alt="melon" /></Td>
+                    <Td>{post.title}</Td>
                     <Td>{post.category}</Td>
-                    <Td>{post.count}</Td>
+                    <Td>{post.rating.count}</Td>
                     <Td>{post.price}</Td>
-                    <Td><Button colorScheme='teal' size='md' onClick={onOpen}> ویرایش</Button><Button colorScheme='teal' size='md' mr={4} onClick={handleRemove}> حذف</Button></Td>
+                    <Td><Button colorScheme='teal' size='md' onClick={onOpen}> ویرایش</Button><Button colorScheme='teal' size='md' mr={4} onClick={()=>handleRemove(post.id)}> حذف</Button></Td>
                   </Tr>
                 ))}
             </Tbody>

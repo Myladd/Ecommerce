@@ -1,5 +1,5 @@
 import { Button, Flex, Image, Input, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Spinner, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import melon from "assets/images/melon.png";
 
 function CountAndPrice({ posts, loading }) {
@@ -20,6 +20,26 @@ function CountAndPrice({ posts, loading }) {
     );
   }
 
+  // const [editFormData, setEditFormData] = useState({
+  //   fullName: "",
+  //   address: "",
+  //   phoneNumber: "",
+  //   email: "",
+  // });
+
+  // const [editContactId, setEditContactId] = useState(null);
+
+  // const handleEditFormChange = (event) => {
+  //   event.preventDefault();
+
+  //   const fieldName = event.target.getAttribute("name");
+  //   const fieldValue = event.target.value;
+
+  //   const newFormData = { ...editFormData };
+  //   newFormData[fieldName] = fieldValue;
+
+  //   setEditFormData(newFormData);
+  // };
 
   return (
     <>
@@ -38,13 +58,13 @@ function CountAndPrice({ posts, loading }) {
               {posts.map((post) => (
                 <Tr key={post.id}>
                   <Td>
-                    <Image borderRadius="full" boxSize="40px" src={melon} alt="melon" />
+                    <Image borderRadius="full" boxSize="40px" src={post.image} alt="melon" />
                   </Td>
-                  <Td>{post.name}</Td>
+                  <Td>{post.title}</Td>
                   <Td>
                     <Popover>
                       <PopoverTrigger>
-                      <Button>{post.count}</Button>
+                      <Button>{post.rating.count}</Button>
                       </PopoverTrigger>
                       <PopoverContent>
                         <PopoverArrow />

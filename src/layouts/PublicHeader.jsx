@@ -1,6 +1,6 @@
 import { Button, ButtonGroup, Center, Flex, Heading, Image, Input, Spacer } from "@chakra-ui/react";
 import { BsFillBasket2Fill } from "react-icons/bs";
-import logo from "assets/images/istockphoto-1205419959-1024x1024.jpg";
+import logo from "assets/images/amazon.jpg";
 import React from "react";
 import { NavLink } from "react-router-dom";
 

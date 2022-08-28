@@ -10,24 +10,24 @@ function Carousel1() {
         <Carousel.Item>
           <img className="d-block w-100" src={gro1} alt="First slide"/>
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>فروشگاه تره بار</h3>
+            <p>محصولات تازه و با کیفیت و ارگانیک</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={gro2} alt="Second slide"/>
 
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>فروشگاهی با انواع میوه و سبزیجات</h3>
+            <p>به صورت روزانه تهیه می شوند.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={gro3} alt="Third slide"/>
 
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <h3>سلامتی شما با محصولات ارگانیک</h3>
+            <p>با بیش از ۱۰۰۰ نوع تنوع محصولات</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

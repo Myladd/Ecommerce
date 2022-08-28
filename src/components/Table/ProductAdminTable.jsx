@@ -14,7 +14,7 @@ function ProductAdminTable() {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      const res = await axios.get('http://localhost:3001/products');
+      const res = await axios.get('https://fakestoreapi.com/products');
       setPosts(res.data);
       setLoading(false);
       console.log(res.data);
