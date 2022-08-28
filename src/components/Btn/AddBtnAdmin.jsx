@@ -2,7 +2,7 @@ import { Button, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalF
 import axios from "axios";
 import { Editor, EditorState } from "draft-js";
 import 'draft-js/dist/Draft.css';
-import React, { useEffect} from "react";
+import React, { useEffect, useState} from "react";
 import { Form } from "react-bootstrap";
 
 function AddBtnAdmin() {
@@ -12,7 +12,7 @@ function AddBtnAdmin() {
   );
 
   
-  // const [contacts, setContacts] = useState();
+  const [contacts, setContacts] = useState();
   // const [addFormData, setAddFormData] = useState({
   //   name: "",
   //   address: "",
