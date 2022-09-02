@@ -9,6 +9,7 @@ import SingleProduct from "pages/SingleProduct";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cart from "./pages/Cart";
+import SuccessfulPayment from "./pages/SuccessfulPayment";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/Cart" element={<Cart />} />
         <Route path="/checkout" element={<Payment/>} />
         <Route path="/products/:id" element={<SingleProduct/>} />
+        <Route path="/successful" element={<SuccessfulPayment/>} />
       </Routes>
     </Router>
   );

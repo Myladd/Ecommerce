@@ -1,6 +1,7 @@
 import Header from "layouts/PublicHeader";
 import React from "react";
 import {useSelector} from "react-redux";
+import {NavLink} from "react-router-dom";
 
 function Payment() {
     const state = useSelector((state)=> state.addItems)
@@ -112,9 +113,10 @@ function Payment() {
                         </div>
 
                         <hr className="my-4"/>
-
-                        <button className="w-100 btn btn-success btn-lg" type="submit">ادامه پرداخت
-                        </button>
+                        <NavLink to='/successful'>
+                            <button className="w-100 btn btn-success btn-lg" type="submit">ادامه پرداخت
+                            </button>
+                        </NavLink>
                     </form>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import {useDispatch} from "react-redux";
 import {delItem} from "../redux/actions";
 import PublicHeader from "../layouts/PublicHeader";
 import {NavLink} from "react-router-dom";
+import empty from 'assets/images/9091-empty-sad-shopping-bag (1).gif'
 
 function Cart() {
     const state = useSelector((state)=> state.addItems)
@@ -37,11 +38,9 @@ function Cart() {
     const emptyCart = ()=>{
         return (
             <>
-            <div className="px-4 my-5 bg-light rounded-3">
-                <div className="container py-4">
-                    <div className="row">
-                        <h3>Your Cart is Empty</h3>
-                    </div>
+            <div className="px-4 my-5 rounded-3">
+                <div className="container py-4 d-flex justify-content-center">
+                    <img src={empty} alt="..." width="400px" height="400px"/>
                 </div>
             </div>
             </>
