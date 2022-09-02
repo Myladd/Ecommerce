@@ -3,8 +3,12 @@ import { BsFillBasket2Fill } from "react-icons/bs";
 import logo from "assets/images/amazon.jpg";
 import React from "react";
 import { NavLink } from "react-router-dom";
+import {useSelector} from "react-redux";
 
 function Header() {
+
+    const state = useSelector((state)=> state.addItems)
+
   return (
     <Flex boxShadow="xl" align="center" gap="2" w="100%" h="130px" bgGradient="linear(to-r,blue.300,green.300)">
       <Center p="2" mr={10}>
@@ -21,9 +25,9 @@ function Header() {
             مدیریت
           </Button>
         </NavLink>
-        <NavLink to={"/Payment"}>
+        <NavLink to={"/Cart"}>
           <Button colorScheme="teal">
-            سبد خرید <BsFillBasket2Fill />
+            سبد خرید ({state.length}) <BsFillBasket2Fill />
           </Button>
         </NavLink>
       </ButtonGroup>

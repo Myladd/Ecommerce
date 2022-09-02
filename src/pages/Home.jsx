@@ -3,6 +3,7 @@ import Header from "layouts/PublicHeader";
 import React, { useEffect, useState } from "react";
 import { Skeleton } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
+import {connect} from "react-redux"
 
 function Home() {
   // const [posts, setPosts] = useState([]);
@@ -103,33 +104,19 @@ function Home() {
   return (
     <>
       <Header />
-      {/* <Carousel1 />
-        <Row xs={1} md={2} className="g-4 mt-3">
-          {posts.map((item) => (
-            <Col className='d-flex justify-content-center'>
-              <Card style={{ width: "18rem" }} key={item.id}>
-                <Card.Img variant="top" src={melon} />
-                <Card.Body>
-                  <Card.Title>{item.name}</Card.Title>
-                  <Card.Text>متن مربوط به هر محصول</Card.Text>
-                  <Button variant="primary">خرید</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row> */}
       <div>
-        <div className="container my-5 py-5">
-          <div className="row">
-            <div className="col-12 mb-5">
-              <h1 className="display-6 fw-bolder text-center">محصولات</h1>
+          <div className="container my-5 py-5">
+            <div className="row">
+              <div className="col-12 mb-5">
+                <h1 className="display-6 fw-bolder text-center">محصولات</h1>
+              </div>
             </div>
+            <div className="row justify-content-center">{loading ? <Loading /> : <ShowProducts />}</div>
           </div>
-          <div className="row justify-content-center">{loading ? <Loading /> : <ShowProducts />}</div>
-        </div>
       </div>
     </>
   );
 }
+
 
 export default Home;

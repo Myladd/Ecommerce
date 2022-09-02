@@ -8,6 +8,7 @@ import Products from "pages/Products";
 import SingleProduct from "pages/SingleProduct";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Cart from "./pages/Cart";
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
         <Route path="/Orders" element={<Orders />} />
         <Route path="/Admin" element={<Admin />} />
         <Route path="/" element={<Home />} />
-        <Route path="/Payment" element={<Payment />} />
+        <Route path="/Cart" element={<Cart />} />
+        <Route path="/checkout" element={<Payment/>} />
         <Route path="/products/:id" element={<SingleProduct/>} />
       </Routes>
     </Router>

@@ -2,12 +2,19 @@ import { Skeleton } from "@chakra-ui/react";
 import Header from "layouts/PublicHeader";
 import React, { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {addItem, delItem} from "../redux/actions";
 
 function SingleProduct() {
   const { id } = useParams();
   console.log(id);
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch()
+
+  const handleAdd = ()=>{
+    dispatch(addItem(product))
+  }
 
   // const dispatch = useDispatch()
   // const addProduct = (product) => {
@@ -52,7 +59,7 @@ function SingleProduct() {
           <p className="lead">Rating {product.rating && product.rating.rate}</p>
           <h3>{product.price}</h3>
           <p className="lead">{product.description}</p>
-          <button className="btn btn-outline-success px-4 py-2 my-4">افزودن به سبد</button>
+          <button onClick={()=> handleAdd()} className="btn btn-outline-success px-4 py-2 my-4">افزودن به سبد</button>
           <button className="btn btn-success ms-2 px-3 py-2 mx-2 my-4">سبد خرید</button>
         </div>
       </>
