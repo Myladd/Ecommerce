@@ -10,7 +10,7 @@ function Products() {
       <AdminHeader />
       <Flex alignItems='center' m={10}>
         <Text fontSize="4xl" mr={10}>
-          مدیریت کالا ها
+          Products List
         </Text>
         <Spacer/>
         <AddBtnAdmin />

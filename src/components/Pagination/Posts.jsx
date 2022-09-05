@@ -29,13 +29,13 @@ const Posts = ({posts ,loading }) => {
   const handleRemove = (id) => {
 
     Swal.fire({
-      title: 'آیا میخواهید حذف شود؟',
-      text: "در صورت تایید کالا موردنظر حذف میشود.",
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'بله حذف شود'
+      confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(`https://fakestoreapi.com/products/${id}`, {
@@ -44,9 +44,9 @@ const Posts = ({posts ,loading }) => {
           if (res.status === 200) {
             console.log(res.json());
             Swal.fire(
-              'حذف شد',
-              'کالای موردنظر حذف گردید',
-              'انجام شد'
+              'Deleted',
+              'Your product has been deleted.',
+              'Ok'
             )      
           }
         }).then((res)=> {console.log(res);})
@@ -63,12 +63,12 @@ const Posts = ({posts ,loading }) => {
           <Table w="800px" variant="striped" colorScheme="teal">
             <Thead>
               <Tr>
-                <Th>تصویر کالا</Th>
-                <Th>نام کالا</Th>
-                <Th>دسته بندی</Th>
-                <Th>تعداد</Th>
-                <Th>قیمت</Th>
-                <Th>عملیات</Th>
+                <Th>Image</Th>
+                <Th>Product Name</Th>
+                <Th>Category</Th>
+                <Th>Count</Th>
+                <Th>Price</Th>
+                <Th>Operation</Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -78,8 +78,8 @@ const Posts = ({posts ,loading }) => {
                     <Td>{post.title}</Td>
                     <Td>{post.category}</Td>
                     <Td>{post.rating.count}</Td>
-                    <Td>{post.price}</Td>
-                    <Td><Button colorScheme='teal' size='md' onClick={onOpen}> ویرایش</Button><Button colorScheme='teal' size='md' mr={4} onClick={()=>handleRemove(post.id)}> حذف</Button></Td>
+                    <Td>{post.price} $</Td>
+                    <Td><Button colorScheme='teal' size='md' onClick={onOpen}>Edit</Button><Button colorScheme='teal' size='md' ml={4} onClick={()=>handleRemove(post.id)}> Delete</Button></Td>
                   </Tr>
                 ))}
             </Tbody>
@@ -88,28 +88,29 @@ const Posts = ({posts ,loading }) => {
         <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader dir="ltr">ویرایش اطلاعات محصول مورد نظر</ModalHeader>
+          <ModalHeader>Edit Product Details</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Form.Group controlId="formFile" className="mb-3">
-              <Text fontSize="xl">تصویر کالا:</Text>
+              <Text fontSize="xl">Image: </Text>
               <Form.Control dir="ltr" type="file" />
             </Form.Group>
-            <Text fontSize="xl">نام کالا:</Text>
+            <Text fontSize="xl">Product Name: </Text>
             <Input placeholder="Basic usage" />
-            <Text fontSize="xl">دسته بندی:</Text>
-            <Select dir="ltr" placeholder="انتخاب کنید">
-              <option value="option1">میوه</option>
-              <option value="option2">سبزی</option>
-              <option value="option3">حبوبات</option>
+            <Text fontSize="xl">Category: </Text>
+            <Select dir="ltr" placeholder="Choose a category">
+              <option value="option1">Men's clothe</option>
+              <option value="option2">Women's clothe</option>
+              <option value="option3">Electronics</option>
+              <option value="option4">Jewelry</option>
             </Select>
             <Editor editorState={editorState} onChange={setEditorState} />
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme="blue" ml={5} onClick={onClose}>
-              بستن
+            <Button variant="ghost" onClick={onClose}>
+              Close
             </Button>
-            <Button variant="ghost">ویرایش</Button>
+            <Button colorScheme="blue" ml={5}>Edit</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

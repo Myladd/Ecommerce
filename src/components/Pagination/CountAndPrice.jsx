@@ -48,10 +48,10 @@ function CountAndPrice({ posts, loading }) {
           <Table w="800px" variant="striped" colorScheme="teal">
             <Thead>
               <Tr>
-                <Th>تصویر کالا</Th>
-                <Th>نام کالا</Th>
-                <Th>تعداد</Th>
-                <Th>قیمت</Th>
+                <Th>Image</Th>
+                <Th>Product Name</Th>
+                <Th>Count</Th>
+                <Th>Price</Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -69,21 +69,21 @@ function CountAndPrice({ posts, loading }) {
                       <PopoverContent>
                         <PopoverArrow />
                         {/* <PopoverCloseButton dir="ltr"/> */}
-                        <PopoverHeader>تعداد را وارد کنید</PopoverHeader>
-                        <PopoverBody><Input placeholder='تعداد به عدد' /></PopoverBody>
+                        <PopoverHeader>Enter number of product</PopoverHeader>
+                        <PopoverBody><Input placeholder='Number' /></PopoverBody>
                       </PopoverContent>
                     </Popover>
                   </Td>
                   <Td>
                   <Popover>
                       <PopoverTrigger>
-                      <Button>{post.price}</Button>
+                      <Button>{post.price} $</Button>
                       </PopoverTrigger>
                       <PopoverContent>
                         <PopoverArrow />
                         {/* <PopoverCloseButton dir="ltr"/> */}
-                        <PopoverHeader>قیمت را وارد کنید</PopoverHeader>
-                        <PopoverBody><Input placeholder='قیمت به عدد' /></PopoverBody>
+                        <PopoverHeader>Enter price of product</PopoverHeader>
+                        <PopoverBody><Input placeholder='Price' /></PopoverBody>
                       </PopoverContent>
                     </Popover>
                   </Td>

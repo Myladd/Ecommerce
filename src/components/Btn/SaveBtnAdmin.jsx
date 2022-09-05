@@ -4,7 +4,7 @@ import React from "react";
 function SaveBtnAdmin() {
   return (
     <Button colorScheme="teal" size="lg">
-      ذخیره
+      Save
     </Button>
   );
 }

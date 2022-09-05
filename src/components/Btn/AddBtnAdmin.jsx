@@ -60,33 +60,34 @@ function AddBtnAdmin() {
   return (
     <>
       <Button onClick={onOpen} colorScheme="teal" size="lg">
-        افزودن کالا
+        Add Product
       </Button>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader dir="ltr">افزودن کالا</ModalHeader>
+          <ModalHeader>Add product</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Form.Group controlId="formFile" className="mb-3">
-              <Text fontSize="xl">تصویر کالا:</Text>
+              <Text fontSize="xl">Image: </Text>
               <Form.Control dir="ltr" type="file" />
             </Form.Group>
-            <Text fontSize="xl">نام کالا:</Text>
+            <Text fontSize="xl">Product name: </Text>
             <Input placeholder="Basic usage" name="name"/>
-            <Text fontSize="xl">دسته بندی:</Text>
-            <Select dir="ltr" placeholder="انتخاب کنید">
-              <option value="option1">میوه</option>
-              <option value="option2">سبزی</option>
-              <option value="option3">حبوبات</option>
+            <Text fontSize="xl">Category: </Text>
+            <Select dir="ltr" placeholder="Choose a category">
+              <option value="option1">Men's clothe</option>
+              <option value="option2">Women's clothe</option>
+              <option value="option3">Electronics</option>
+              <option value="option4">Jewelry</option>
             </Select>
             <Editor editorState={editorState} onChange={setEditorState} />
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme="blue" ml={5} onClick={onClose}>
-              بستن
+            <Button variant="ghost" onClick={onClose}>
+              Close
             </Button>
-            <Button variant="ghost">افزودن</Button>
+            <Button colorScheme="blue" ml={5} >Add</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

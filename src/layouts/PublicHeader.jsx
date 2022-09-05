@@ -10,26 +10,26 @@ function Header() {
     const state = useSelector((state)=> state.addItems)
 
   return (
-    <Flex boxShadow="xl" align="center" gap="2" w="100%" h="130px" bgGradient="linear(to-r,blue.300,green.300)">
+    <Flex boxShadow="xl" p='4' align="center" gap="2" w="100%" h="130px" bgGradient="linear(to-r,blue.300,green.300)">
         <NavLink to='/'>
             <Center p="2" mr={10}>
                 <Image borderRadius="full" boxSize="100px" src={logo} alt="logo" />
             </Center>
         </NavLink>
       <Center p="2">
-        <Heading size="md">فروشگاه</Heading>
+        <Heading size="md">Amazon</Heading>
       </Center>
-      <Input placeholder="جستوجوی محصول" w="300px" bg="none"/>
+      <Input placeholder="Serach" w="300px" bg="none"/>
       <Spacer />
       <ButtonGroup gap="2" ml={10}>
         <NavLink to={"/Admin"}>
           <Button colorScheme="teal" variant="ghost">
-            مدیریت
+            Admin
           </Button>
         </NavLink>
         <NavLink to={"/Cart"}>
           <Button colorScheme="teal">
-            سبد خرید ({state.length}) <BsFillBasket2Fill />
+            Basket ({state.length})   <BsFillBasket2Fill />
           </Button>
         </NavLink>
       </ButtonGroup>

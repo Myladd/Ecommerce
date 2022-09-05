@@ -9,7 +9,7 @@ function Existence() {
     <>
       <AdminHeader />
       <Flex alignItems='center' m={10}>
-      <Text fontSize='4xl' mr={10}>مدیریت موجودی و قیمت ها</Text>
+      <Text fontSize='4xl' mr={10}>Count And Price List</Text>
         <Spacer/>
         <SaveBtnAdmin />
       </Flex>

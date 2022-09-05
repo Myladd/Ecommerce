@@ -1,7 +1,7 @@
 
-* {
+body {
   margin: 0;
-  font-family: "Samim"; 
+  font-family: "Roboto" , sans-serif;
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   direction: rtl; */
@@ -12,8 +12,3 @@
   monospace;
 } */
 
-
-  @font-face {
-    font-family: "Samim";
-    src: url(../src/assets/fonts/Samim.ttf);
-  }

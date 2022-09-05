@@ -14,6 +14,19 @@ function Cart() {
         dispatch(delItem(item))
     }
 
+    let total = 0
+    const itemList = (item)=>{
+        total = total + item.price
+        return (
+            <li className="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                    <h6 className="my-0">{item.title}</h6>
+                </div>
+                <span className="text-muted">${item.price}</span>
+            </li>
+        )
+    }
+
 
     const cartItems = (cartItem)=>{
         return (
@@ -25,7 +38,7 @@ function Cart() {
                             <div className="col-md-4">
                                 <img src={cartItem.image} alt={cartItem.title} height="200px" width="180px"/>
                                 <h3>{cartItem.title}</h3>
-                                <p className="lead fw-bold">{cartItem.price}</p>
+                                <p className="lead fw-bold">{cartItem.price} $</p>
                             </div>
                         </div>
                     </div>
@@ -60,8 +73,23 @@ function Cart() {
     return (
         <>
             <PublicHeader/>
-            {state.length === 0 && emptyCart()}
-            {state.length !== 0 && state.map(cartItems)}
+            <div className="container">
+                <div className="row">
+                    <div className="col-8">
+                        {state.length === 0 && emptyCart()}
+                        {state.length !== 0 && state.map(cartItems)}
+                    </div>
+                    <div className="col-4">
+                        <ul className="list-group mt-5 sticky-top">
+                            {state.map(itemList)}
+                            <li className="list-group-item d-flex justify-content-between">
+                                <span>Total</span>
+                                <strong>${total}</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             {state.length!== 0 && button()}
         </>
     );

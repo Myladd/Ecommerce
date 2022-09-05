@@ -53,14 +53,14 @@ function SingleProduct() {
         <div className="col-md-6">
           <img src={product.image} alt="..." height="400px" width="400px" />
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 text-start">
           <h4 className="text-uppercase text-black-50">{product.category}</h4>
           <h1 className="display-5">{product.title}</h1>
           <p className="lead">Rating {product.rating && product.rating.rate}</p>
-          <h3>{product.price}</h3>
+          <h3>{product.price} $</h3>
           <p className="lead">{product.description}</p>
-          <button onClick={()=> handleAdd()} className="btn btn-outline-success px-4 py-2 my-4">افزودن به سبد</button>
-          <button className="btn btn-success ms-2 px-3 py-2 mx-2 my-4">سبد خرید</button>
+          <button  className="btn btn-success ms-2 px-3 py-2 mx-2 my-4" onClick={()=> handleAdd()}>Add to basket</button>
+          <button className="btn btn-outline-success px-4 py-2 my-4">Basket</button>
         </div>
       </>
     );

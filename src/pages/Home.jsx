@@ -65,20 +65,20 @@ function Home() {
     return (
       <>
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
-          <button className="btn btn-outline-success" onClick={() => setFilter(data)}>
-            همه
+          <button className="btn btn-outline-success me-2" onClick={() => setFilter(data)}>
+            All
           </button>
           <button className="btn btn-outline-success me-2" onClick={() => filterProducts("men's clothing")}>
-            لباس مردانه
+            Men's Clothe
           </button>
           <button className="btn btn-outline-success me-2" onClick={() => filterProducts("women's clothing")}>
-            لباس زنانه
+            Women's Clothe
           </button>
           <button className="btn btn-outline-success me-2" onClick={() => filterProducts("jewelery")}>
-            جواهرات
+            Jewelry
           </button>
           <button className="btn btn-outline-success me-2" onClick={() => filterProducts("electronics")}>
-            دیجیتال
+            Electronics
           </button>
         </div>
         {filter.map((product) => {
@@ -88,9 +88,9 @@ function Home() {
                 <img src={product.image} className="card-img-top h-100" alt={product.title} />
                 <div className="card-body">
                   <h5 className="card-title mb-0">{product.title.substring(0, 12)}</h5>
-                  <p className="card-text">{product.price}</p>
+                  <p className="card-text">{product.price} $</p>
                   <NavLink to={`/products/${product.id}`} className="btn btn-outline-success">
-                    خرید محصول
+                    Buy
                   </NavLink>
                 </div>
               </div>
@@ -108,7 +108,7 @@ function Home() {
           <div className="container my-5 py-5">
             <div className="row">
               <div className="col-12 mb-5">
-                <h1 className="display-6 fw-bolder text-center">محصولات</h1>
+                <h1 className="display-6 fw-bolder text-center">Products</h1>
               </div>
             </div>
             <div className="row justify-content-center">{loading ? <Loading /> : <ShowProducts />}</div>
