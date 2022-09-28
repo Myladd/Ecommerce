@@ -1,7 +1,7 @@
 import { Button, Flex, Image, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Spinner, Table, TableContainer, Tbody, Td, Text, Th, Thead, Tr, useDisclosure } from "@chakra-ui/react";
 import React from "react";
 import Swal from "sweetalert2";
-import { Form } from "react-bootstrap";
+// import { Form } from "react-bootstrap";
 import { Editor, EditorState } from "draft-js";
 
 const Posts = ({posts ,loading }) => {
@@ -91,20 +91,20 @@ const Posts = ({posts ,loading }) => {
           <ModalHeader>Edit Product Details</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Form.Group controlId="formFile" className="mb-3">
-              <Text fontSize="xl">Image: </Text>
-              <Form.Control dir="ltr" type="file" />
-            </Form.Group>
-            <Text fontSize="xl">Product Name: </Text>
-            <Input placeholder="Basic usage" />
-            <Text fontSize="xl">Category: </Text>
-            <Select dir="ltr" placeholder="Choose a category">
-              <option value="option1">Men's clothe</option>
-              <option value="option2">Women's clothe</option>
-              <option value="option3">Electronics</option>
-              <option value="option4">Jewelry</option>
-            </Select>
-            <Editor editorState={editorState} onChange={setEditorState} />
+            {/*<Form.Group controlId="formFile" className="mb-3">*/}
+            {/*  <Text fontSize="xl">Image: </Text>*/}
+            {/*  <Form.Control dir="ltr" type="file" />*/}
+            {/*</Form.Group>*/}
+            {/*<Text fontSize="xl">Product Name: </Text>*/}
+            {/*<Input placeholder="Basic usage" />*/}
+            {/*<Text fontSize="xl">Category: </Text>*/}
+            {/*<Select dir="ltr" placeholder="Choose a category">*/}
+            {/*  <option value="option1">Men's clothe</option>*/}
+            {/*  <option value="option2">Women's clothe</option>*/}
+            {/*  <option value="option3">Electronics</option>*/}
+            {/*  <option value="option4">Jewelry</option>*/}
+            {/*</Select>*/}
+            {/*<Editor editorState={editorState} onChange={setEditorState} />*/}
           </ModalBody>
           <ModalFooter>
             <Button variant="ghost" onClick={onClose}>

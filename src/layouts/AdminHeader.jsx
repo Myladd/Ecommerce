@@ -1,8 +1,14 @@
 import { Box, Button, ButtonGroup, Flex, Spacer, Text } from "@chakra-ui/react";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate} from "react-router-dom";
 
 function AdminHeader() {
+
+    const navigate = useNavigate()
+    const logOut = () => {
+        localStorage.removeItem('token');
+        navigate('/')
+    }
   return (
       <Flex boxShadow='xl' p='4' minWidth="max-content" align="center" gap="2" w="100%" h="130px" bgGradient="linear(to-r,blue.300,green.300)">
         {/* <Flex></Flex> */}
@@ -32,11 +38,9 @@ function AdminHeader() {
         </ButtonGroup>
         <Spacer />
         <Box ml={10}>
-          <NavLink to={"/"}>
-            <Button colorScheme="green" variant="ghost">
+            <Button onClick={logOut} colorScheme="green" variant="ghost">
               Home
             </Button>
-          </NavLink>
         </Box>
       </Flex>
   );
